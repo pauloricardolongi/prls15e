@@ -2,6 +2,7 @@ package aplicacao;
 
 import java.util.Locale;
 
+
 import java.util.Scanner;
 
 import entidades.Conta;
@@ -31,15 +32,20 @@ public class App01 {
 			System.out.println("erro de saque: a quantia excede o limite de saque ");
 			
 		}
+		else if(quantia > conta.getSaldo()) {
+			System.out.println("erro de saque: saldo insuficiente");
+		}
+		else {
 						
 		conta.saque(quantia);
 		System.out.printf("Novo saldo: %.2f%n" , conta.getSaldo());
+		}
 		
 		sc.close();
 
 	}
 
-}
+	}
 
 
 		
